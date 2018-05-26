@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="AuthServer.cpp">
+      <Filter>AuthServer</Filter>
+    </ClCompile>
+    <ClCompile Include="AuthServerTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="AuthServer">
+      <UniqueIdentifier>{6dac4150-3d72-4cfb-a1b4-53caaec8e0a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Test">
+      <UniqueIdentifier>{3be1ab18-ce8b-43d2-b0eb-bb0fcfa62234}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AuthServer.h">
+      <Filter>AuthServer</Filter>
+    </ClInclude>
+    <ClInclude Include="AuthServerTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

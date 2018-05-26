@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Model">
+      <UniqueIdentifier>{25af24b8-83fa-4184-af3c-7264be5d00bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{aaeafe96-354e-4a71-ae9a-372a96d522f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PacketDefine">
+      <UniqueIdentifier>{b4862487-8af8-4347-a1f7-a5e46b477b4e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="User.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Record.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonPacket.h">
+      <Filter>PacketDefine</Filter>
+    </ClInclude>
+    <ClInclude Include="TrackGamePacket.h">
+      <Filter>PacketDefine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameRoomPacket.h">
+      <Filter>PacketDefine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

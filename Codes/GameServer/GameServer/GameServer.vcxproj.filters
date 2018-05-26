@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Log">
+      <UniqueIdentifier>{2d5a6725-a6a2-47b9-bcd3-be198c6e4f8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{acd2e384-73a2-4342-9745-c716721373a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Session">
+      <UniqueIdentifier>{bb644a70-2162-426c-a126-db1ad5a616d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server">
+      <UniqueIdentifier>{db7c0dd3-5c85-4b47-8945-a434dcb9b3e8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseServer.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="InternalSession.cpp">
+      <Filter>Session</Filter>
+    </ClCompile>
+    <ClCompile Include="Session.cpp">
+      <Filter>Session</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseServer.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="BasePacketDefine.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="InternalSession.h">
+      <Filter>Session</Filter>
+    </ClInclude>
+    <ClInclude Include="Session.h">
+      <Filter>Session</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,28 @@
+#
+# Project : MySQL Connector C++ Library
+#
+
+set(Boost_USE_STATIC_LIBS OFF)
+set(Boost_USE_MULTITHREADED ON)
+set(Boost_USE_STATIC_RUNTIME OFF)
+
+file(GLOB SOURCES ${GameServer_SOURCE_DIR}/DBConnection/*.cpp)
+
+include_directories(${gtest_INCLUDE_DIRS})
+include_directories(${Boost_INCLUDE_DIRS})
+include_directories(${MYSQL_INCLUDE_DIR})
+include_directories(${EXTERNAL_LIB_PATH}/mysqlcppconn/include)
+include_directories(${EXTERNAL_LIB_PATH}/mysqlcppconn/include/cppconn)
+
+add_library (DBConnection SHARED ${SOURCES})
+
+target_link_libraries(DBConnection
+	${Boost_LIBRARIES}
+	${Boost_LOG_SETUP_LIBRARY}
+	${Boost_LOG_LIBRARY}
+	${Boost_FILESYSTEM_LIBRARY}
+	${Boost_THREAD_LIBRARY}
+	${Boost_SYSTEM_LIBRARY}
+	${MYSQL_LIBRARY}
+	${EXTERNAL_LIB_PATH}/mysqlcppconn/lib/libmysqlcppconn.7.dylib
+)

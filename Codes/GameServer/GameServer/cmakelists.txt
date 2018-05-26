@@ -1,0 +1,22 @@
+#
+# Project : GameServer Library
+#
+
+set(Boost_USE_STATIC_LIBS OFF)
+set(Boost_USE_MULTITHREADED ON)
+set(Boost_USE_STATIC_RUNTIME OFF)
+
+file(GLOB SOURCES ${GameServer_SOURCE_DIR}/GameServer/*.cpp)
+
+include_directories(${gtest_INCLUDE_DIRS})
+include_directories(${Boost_INCLUDE_DIRS})
+
+add_library(GameServer SHARED ${SOURCES})
+
+target_link_libraries(GameServer ${Boost_LIBRARIES}
+    ${Boost_LOG_SETUP_LIBRARY}
+    ${Boost_LOG_LIBRARY}
+    ${Boost_FILESYSTEM_LIBRARY}
+    ${Boost_THREAD_LIBRARY}
+    ${Boost_SYSTEM_LIBRARY}
+)

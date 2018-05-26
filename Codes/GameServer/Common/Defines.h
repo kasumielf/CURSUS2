@@ -1,0 +1,1 @@
+const float MAX_SIGHT_RANGE = 20.0f;

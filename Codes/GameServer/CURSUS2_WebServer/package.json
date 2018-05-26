@@ -1,0 +1,25 @@
+{
+  "name": "cursus2_web-server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "description": "CURSUS2_WebServer",
+  "author": {
+    "name": "kasum"
+  },
+  "dependencies": {
+    "body-parser": "^1.8.4",
+    "cookie-parser": "^1.3.5",
+    "dateformat": "^2.0.0",
+    "debug": "^2.0.0",
+    "express": "^4.16.2",
+    "jade": "^1.6.0",
+    "morgan": "^1.3.2",
+    "request": "^2.81.0",
+    "serve-favicon": "^2.1.7",
+    "stylus": "^0.42.3",
+    "xml2js": "^0.4.17"
+  }
+}
