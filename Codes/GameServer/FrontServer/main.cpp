@@ -5,34 +5,34 @@
 
 int main(int argc, char** argv)
 {
-	boost::asio::io_service io_service;
+    boost::asio::io_service io_service;
 
-	FrontServer server(7002, 1000, io_service);
-	
-	std::vector<Channel> worlds;
+    FrontServer server(7002, 1000, io_service);
+    
+    std::vector<Channel> worlds;
 
-	server.Init();
-	server.Start();
+    server.Init();
+    server.Start();
 
-	server.Connect("World", "127.0.0.1", 7003);
-	//server.AddChannel("World No.1", "World", server.GetMyAddr(0).c_str(), 7003);
-	server.AddChannel("World No.1", "World", "127.0.0.1", 7003);
+    server.Connect("World", "127.0.0.1", 7003);
+    //server.AddChannel("World No.1", "World", server.GetMyAddr(0).c_str(), 7003);
+    server.AddChannel("World No.1", "World", "127.0.0.1", 7003);
 
-	boost::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
+    boost::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
 
-	int c = 0;
+    int c = 0;
 
-	while (c != 27)
-	{
-		c = std::cin.get();
+    while (c != 27)
+    {
+        c = std::cin.get();
 
-		if (c == 97)
-		{
+        if (c == 97)
+        {
 
-		}
-	}
+        }
+    }
 
-	std::cout << "Connection end" << std::endl;
+    std::cout << "Connection end" << std::endl;
 
-	return 0;
+    return 0;
 }

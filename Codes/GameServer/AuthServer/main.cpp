@@ -9,29 +9,29 @@
 
 int main(int argc, char** argv)
 {
-	//::testing::InitGoogleTest(&argc, argv);
-	//RUN_ALL_TESTS();
+    //::testing::InitGoogleTest(&argc, argv);
+    //RUN_ALL_TESTS();
 
-	boost::asio::io_service io_service;
+    boost::asio::io_service io_service;
 
-	AuthServer server(7000, 2000, io_service);
+    AuthServer server(7000, 2000, io_service);
 
-	server.Init();
-	server.Start();
+    server.Init();
+    server.Start();
 
-	server.Connect("DB", "127.0.0.1", 7001);
-	server.Connect("Front", "127.0.0.1", 7002);
+    server.Connect("DB", "127.0.0.1", 7001);
+    server.Connect("Front", "127.0.0.1", 7002);
 
-	boost::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
+    boost::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
 
-	int c = 0;
+    int c = 0;
 
-	while (c != 27)
-	{
-		c = std::cin.get();
-	}
+    while (c != 27)
+    {
+        c = std::cin.get();
+    }
 
-	std::cout << "Connection end" << std::endl;
+    std::cout << "Connection end" << std::endl;
 
-	return 0;
+    return 0;
 }

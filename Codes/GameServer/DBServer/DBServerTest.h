@@ -6,15 +6,15 @@
 class DBServerTest : public testing::Test
 {
 protected:
-	DBManager m_db;
-	User m_testUser;
+    DBManager m_db;
+    User m_testUser;
 public:
-	DBServerTest();
-	~DBServerTest();
+    DBServerTest();
+    ~DBServerTest();
 
 protected:
-	virtual void SetUp();
-	virtual void TearDown();
-	
+    virtual void SetUp();
+    virtual void TearDown();
+    
 };
 

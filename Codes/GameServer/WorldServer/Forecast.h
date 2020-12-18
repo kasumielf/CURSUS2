@@ -3,7 +3,7 @@
 
 enum class Forecast
 {
-	Sunny = 0,
-	Rain = 1,
-	Snow = 2,
+    Sunny = 0,
+    Rain = 1,
+    Snow = 2,
 };

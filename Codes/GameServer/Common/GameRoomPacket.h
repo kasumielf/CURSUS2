@@ -30,250 +30,250 @@ const short RES_ROOM_PLAYER_BAN = 1022;
 
 namespace GameRoomPacket
 {
-	struct PACKET_NOTIFY_GAME_START : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = NOTIFY_GAME_START;
-			Size = sizeof(PACKET_NOTIFY_GAME_START);
-		}
-		short room_id;
-		float start_x;
-		float start_y;
-		float start_z;
-		float start_r;
-		int map_id;
-	};
+    struct PACKET_NOTIFY_GAME_START : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = NOTIFY_GAME_START;
+            Size = sizeof(PACKET_NOTIFY_GAME_START);
+        }
+        short room_id;
+        float start_x;
+        float start_y;
+        float start_z;
+        float start_r;
+        int map_id;
+    };
 
-	struct PACKET_NOTIFY_PLAYER_ENTER : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = NOTIFY_PLAYER_ENTER;
-			Size = sizeof(PACKET_NOTIFY_PLAYER_ENTER);
-		}
+    struct PACKET_NOTIFY_PLAYER_ENTER : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = NOTIFY_PLAYER_ENTER;
+            Size = sizeof(PACKET_NOTIFY_PLAYER_ENTER);
+        }
 
-		short room_id;
-		int user_uid;
-		char username[12];
-		short player_index;
-	};
+        short room_id;
+        int user_uid;
+        char username[12];
+        short player_index;
+    };
 
-	struct PACKET_NOTIFY_PLAYER_EXIT : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = NOTIFY_PLAYER_EXIT;
-			Size = sizeof(PACKET_NOTIFY_PLAYER_EXIT);
-		}
+    struct PACKET_NOTIFY_PLAYER_EXIT : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = NOTIFY_PLAYER_EXIT;
+            Size = sizeof(PACKET_NOTIFY_PLAYER_EXIT);
+        }
 
-		short room_id;
-		int user_uid;
-		short player_index;
-	};
+        short room_id;
+        int user_uid;
+        short player_index;
+    };
 
-	struct PACKET_NOTIFY_PLAYER_READY : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = NOTIFY_PLAYER_READY;
-			Size = sizeof(PACKET_NOTIFY_PLAYER_READY);
-		}
+    struct PACKET_NOTIFY_PLAYER_READY : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = NOTIFY_PLAYER_READY;
+            Size = sizeof(PACKET_NOTIFY_PLAYER_READY);
+        }
 
-		short room_id;
-		int user_uid;
-		short player_index;
-		bool ready;
-	};
+        short room_id;
+        int user_uid;
+        short player_index;
+        bool ready;
+    };
 
-	struct PACKET_NOTIFY_PLAYER_SET_HOST : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = NOTIFY_PLAYER_SET_HOST;
-			Size = sizeof(PACKET_NOTIFY_PLAYER_SET_HOST);
-		}
+    struct PACKET_NOTIFY_PLAYER_SET_HOST : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = NOTIFY_PLAYER_SET_HOST;
+            Size = sizeof(PACKET_NOTIFY_PLAYER_SET_HOST);
+        }
 
-		short room_id;
-		int player_id;
-		short player_index;
-	};
+        short room_id;
+        int player_id;
+        short player_index;
+    };
 
-	struct PACKET_REQ_CREATE_ROOM_INFO : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = REQ_CREATE_ROOM_INFO;
-			Size = sizeof(PACKET_REQ_CREATE_ROOM_INFO);
-		}
+    struct PACKET_REQ_CREATE_ROOM_INFO : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = REQ_CREATE_ROOM_INFO;
+            Size = sizeof(PACKET_REQ_CREATE_ROOM_INFO);
+        }
 
-		int map_id;
-	};
+        int map_id;
+    };
 
-	struct PACKET_RES_CREATE_ROOM_INFO : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = RES_CREATE_ROOM_INFO;
-			Size = sizeof(PACKET_RES_CREATE_ROOM_INFO);
-		}
+    struct PACKET_RES_CREATE_ROOM_INFO : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = RES_CREATE_ROOM_INFO;
+            Size = sizeof(PACKET_RES_CREATE_ROOM_INFO);
+        }
 
-		short room_id;
-		int map_id;
-		char result;
-	};
+        short room_id;
+        int map_id;
+        char result;
+    };
 
-	struct PACKET_REQ_ROOM_INFO : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = REQ_ROOM_INFO;
-			Size = sizeof(PACKET_REQ_ROOM_INFO);
-		}
-	};
+    struct PACKET_REQ_ROOM_INFO : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = REQ_ROOM_INFO;
+            Size = sizeof(PACKET_REQ_ROOM_INFO);
+        }
+    };
 
-	struct PACKET_RES_ROOM_INFO : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = RES_ROOM_INFO;
-			Size = sizeof(PACKET_RES_ROOM_INFO);
-		}
+    struct PACKET_RES_ROOM_INFO : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = RES_ROOM_INFO;
+            Size = sizeof(PACKET_RES_ROOM_INFO);
+        }
 
-		short room_id;
-		int map_id;
-		short user_count;
-	};
+        short room_id;
+        int map_id;
+        short user_count;
+    };
 
 
-	struct PACKET_REQ_ROOM_PLAYER_READY : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = REQ_ROOM_PLAYER_READY;
-			Size = sizeof(PACKET_REQ_ROOM_PLAYER_READY);
-		}
+    struct PACKET_REQ_ROOM_PLAYER_READY : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = REQ_ROOM_PLAYER_READY;
+            Size = sizeof(PACKET_REQ_ROOM_PLAYER_READY);
+        }
 
-		short room_id;
-		int user_uid;
-		int room_index;
-	};
+        short room_id;
+        int user_uid;
+        int room_index;
+    };
 
-	struct PACKET_REQ_ROOM_PLAYER_EXIT : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = REQ_ROOM_PLAYER_EXIT;
-			Size = sizeof(PACKET_REQ_ROOM_PLAYER_EXIT);
-		}
+    struct PACKET_REQ_ROOM_PLAYER_EXIT : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = REQ_ROOM_PLAYER_EXIT;
+            Size = sizeof(PACKET_REQ_ROOM_PLAYER_EXIT);
+        }
 
-		short room_id;
-	};
+        short room_id;
+    };
 
-	struct PACKET_REQ_ROOM_PLAYER_ENTER : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = REQ_ROOM_PLAYER_ENTER;
-			Size = sizeof(PACKET_REQ_ROOM_PLAYER_ENTER);
-		}
-		short room_id;
-	};
+    struct PACKET_REQ_ROOM_PLAYER_ENTER : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = REQ_ROOM_PLAYER_ENTER;
+            Size = sizeof(PACKET_REQ_ROOM_PLAYER_ENTER);
+        }
+        short room_id;
+    };
 
-	struct PACKET_RES_ROOM_PLAYER_ENTER : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = RES_ROOM_PLAYER_ENTER;
-			Size = sizeof(PACKET_RES_ROOM_PLAYER_ENTER);
-		}
-		short room_id;
-		int map_id;
-		char result;
-		short player_index;
-	};
+    struct PACKET_RES_ROOM_PLAYER_ENTER : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = RES_ROOM_PLAYER_ENTER;
+            Size = sizeof(PACKET_RES_ROOM_PLAYER_ENTER);
+        }
+        short room_id;
+        int map_id;
+        char result;
+        short player_index;
+    };
 
-	struct PACKET_REQ_ROOM_GAME_START : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = REQ_GAME_START;
-			Size = sizeof(PACKET_REQ_ROOM_GAME_START);
-		}
+    struct PACKET_REQ_ROOM_GAME_START : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = REQ_GAME_START;
+            Size = sizeof(PACKET_REQ_ROOM_GAME_START);
+        }
 
-		short room_id;
-	};
+        short room_id;
+    };
 
-	struct PACKET_RES_GAME_START : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = RES_GAME_START;
-			Size = sizeof(PACKET_RES_GAME_START);
-		}
-		short room_id;
-		char result;
-	};
+    struct PACKET_RES_GAME_START : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = RES_GAME_START;
+            Size = sizeof(PACKET_RES_GAME_START);
+        }
+        short room_id;
+        char result;
+    };
 
-	struct PACKET_REQ_ROOM_SET_TYPE : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = REQ_ROOM_SET_TYPE;
-			Size = sizeof(PACKET_REQ_ROOM_SET_TYPE);
-		}
+    struct PACKET_REQ_ROOM_SET_TYPE : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = REQ_ROOM_SET_TYPE;
+            Size = sizeof(PACKET_REQ_ROOM_SET_TYPE);
+        }
 
-		short room_id;
-		short player_index;
-		char type;
-	};
+        short room_id;
+        short player_index;
+        char type;
+    };
 
-	struct PACKET_RES_ROOM_SET_TYPE : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = RES_ROOM_SET_AI;
-			Size = sizeof(PACKET_RES_ROOM_SET_TYPE);
-		}
+    struct PACKET_RES_ROOM_SET_TYPE : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = RES_ROOM_SET_AI;
+            Size = sizeof(PACKET_RES_ROOM_SET_TYPE);
+        }
 
-		char result;
-	};
+        char result;
+    };
 
-	struct PACKET_NOTIFY_ROOM_SET_TYPE : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = NOTIFY_ROOM_SET_AI;
-			Size = sizeof(PACKET_NOTIFY_ROOM_SET_TYPE);
-		}
+    struct PACKET_NOTIFY_ROOM_SET_TYPE : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = NOTIFY_ROOM_SET_AI;
+            Size = sizeof(PACKET_NOTIFY_ROOM_SET_TYPE);
+        }
 
-		short room_id;
-		short player_index;
-		char type;
-	};
+        short room_id;
+        short player_index;
+        char type;
+    };
 
-	struct PACKET_REQ_ROOM_PLAYER_BAN : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = REQ_ROOM_PLAYER_BAN;
-			Size = sizeof(PACKET_REQ_ROOM_PLAYER_BAN);
-		}
+    struct PACKET_REQ_ROOM_PLAYER_BAN : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = REQ_ROOM_PLAYER_BAN;
+            Size = sizeof(PACKET_REQ_ROOM_PLAYER_BAN);
+        }
 
-		short room_id;
-		short player_index;
-	};
+        short room_id;
+        short player_index;
+    };
 
-	struct PACKET_RES_ROOM_PLAYER_BAN : public PACKET_HEADER
-	{
-		void Init()
-		{
-			Id = RES_ROOM_PLAYER_BAN;
-			Size = sizeof(PACKET_RES_ROOM_PLAYER_BAN);
-		}
+    struct PACKET_RES_ROOM_PLAYER_BAN : public PACKET_HEADER
+    {
+        void Init()
+        {
+            Id = RES_ROOM_PLAYER_BAN;
+            Size = sizeof(PACKET_RES_ROOM_PLAYER_BAN);
+        }
 
-		char result;
-	};
+        char result;
+    };
 }
 
 #pragma pack(pop)

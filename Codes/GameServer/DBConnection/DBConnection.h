@@ -21,26 +21,26 @@ typedef std::vector<ResultMap> ResultSets;
 class DBConnection
 {
 private:
-	std::string host;
-	std::string username;
-	std::string pwd;
-	std::string db;
+    std::string host;
+    std::string username;
+    std::string pwd;
+    std::string db;
 
-	sql::Driver *driver;
-	sql::Connection *conn;
-	sql::Statement *stmt;
-	sql::ResultSet *rslt;
+    sql::Driver *driver;
+    sql::Connection *conn;
+    sql::Statement *stmt;
+    sql::ResultSet *rslt;
 
-	void execute(const char* query, ...);
+    void execute(const char* query, ...);
 
 public:
-	DBConnection(std::string _host, std::string _username, std::string _pwd, std::string _db);
-	~DBConnection();
+    DBConnection(std::string _host, std::string _username, std::string _pwd, std::string _db);
+    ~DBConnection();
 
-	void Connect();
-	void Close();
+    void Connect();
+    void Close();
 
-	ResultSets selectQuery(const char* query, bool is_transactional, ...);
-	int updateQuery(const char*query, bool is_transactional);
+    ResultSets selectQuery(const char* query, bool is_transactional, ...);
+    int updateQuery(const char*query, bool is_transactional);
 };
 

@@ -7,16 +7,16 @@
 class AuthServerTest : public testing::Test
 {
 protected:
-	AuthServer m_testAuthServer;
-	boost::asio::io_service io_service;
+    AuthServer m_testAuthServer;
+    boost::asio::io_service io_service;
 
 public:
-	AuthServerTest();
-	~AuthServerTest();
+    AuthServerTest();
+    ~AuthServerTest();
 
-	User m_testUser;
+    User m_testUser;
 protected:
-	virtual void SetUp();
-	virtual void TearDown();
+    virtual void SetUp();
+    virtual void TearDown();
 
 };

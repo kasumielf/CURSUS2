@@ -2713,8 +2713,8 @@ Value::CZString::CZString(char const* str, unsigned ulength, DuplicationPolicy a
 
 Value::CZString::CZString(const CZString& other) {
   cstr_ = (other.storage_.policy_ != noDuplication && other.cstr_ != 0
-				 ? duplicateStringValue(other.cstr_, other.storage_.length_)
-				 : other.cstr_);
+                 ? duplicateStringValue(other.cstr_, other.storage_.length_)
+                 : other.cstr_);
   storage_.policy_ = static_cast<unsigned>(other.cstr_
                  ? (static_cast<DuplicationPolicy>(other.storage_.policy_) == noDuplication
                      ? noDuplication : duplicate)
@@ -2731,7 +2731,7 @@ Value::CZString::CZString(CZString&& other)
 
 Value::CZString::~CZString() {
   if (cstr_ && storage_.policy_ == duplicate) {
-	  releaseStringValue(const_cast<char*>(cstr_), storage_.length_ + 1u); //+1 for null terminating character for sake of completeness but not actually necessary
+      releaseStringValue(const_cast<char*>(cstr_), storage_.length_ + 1u); //+1 for null terminating character for sake of completeness but not actually necessary
   }
 }
 
@@ -2846,7 +2846,7 @@ Value::Value(double value) {
 
 Value::Value(const char* value) {
   initBasic(stringValue, true);
-  JSON_ASSERT_MESSAGE(value != NULL, "Null Value Passed to Value Constructor");	
+  JSON_ASSERT_MESSAGE(value != NULL, "Null Value Passed to Value Constructor");    
   value_.string_ = duplicateAndPrefixStringValue(value, static_cast<unsigned>(strlen(value)));
 }
 
@@ -3101,7 +3101,7 @@ const char* Value::asCString() const {
 #if JSONCPP_USING_SECURE_MEMORY
 unsigned Value::getCStringLength() const {
   JSON_ASSERT_MESSAGE(type_ == stringValue,
-	                  "in Json::Value::asCString(): requires stringValue");
+                      "in Json::Value::asCString(): requires stringValue");
   if (value_.string_ == 0) return 0;
   unsigned this_len;
   char const* this_str;

@@ -7,7 +7,7 @@
 class Sector
 {
 private:
-	int index;
+    int index;
     Vector2D start;
     Vector2D end;
     std::list<User*> users;
@@ -16,7 +16,7 @@ public:
     Sector(Vector2D _start, Vector2D _end, int _index);
     ~Sector();
 
-	int GetSectorIndex() { return index; };
+    int GetSectorIndex() { return index; };
     void AddUser(User* user);
     void RemoveUser(const int user_uid);
 
